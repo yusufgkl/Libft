@@ -1,0 +1,40 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_strtrim.c                                       :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: ygokol <marvin@42.fr>                      +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2016/11/08 22:37:30 by ygokol            #+#    #+#             */
+/*   Updated: 2016/11/29 23:57:17 by ygokol           ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
+#include "libft.h"
+
+char	*ft_strtrim(const char *s)
+{
+	int		i;
+	int		j;
+	int		x;
+	char	*str;
+
+	i = 0;
+	x = 0;
+	if (!s || !ft_strcmp(s, " "))
+		return (NULL);
+	j = (ft_strlen(s) - 1);
+	while (ft_charblank(s[i]) && s[i] != '\0')
+		i++;
+	if (s[i] == '\0')
+		return ("");
+	while (ft_charblank(s[j]))
+		j--;
+	if ((str = (char *)malloc(sizeof(char) * (j - i) + 2)) == NULL)
+		return (NULL);
+	while (i != j)
+		str[x++] = s[i++];
+	str[x++] = s[i++];
+	str[x++] = '\0';
+	return (str);
+}
