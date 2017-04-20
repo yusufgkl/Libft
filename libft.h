@@ -6,12 +6,13 @@
 /*   By: ygokol <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/13 18:31:10 by ygokol            #+#    #+#             */
-/*   Updated: 2016/11/30 03:45:53 by ygokol           ###   ########.fr       */
+/*   Updated: 2017/02/13 15:51:21 by ygokol           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef _LIBFT_H
 # define _LIBFT_H
+# define BUFF_SIZE 42
 # include <stdlib.h>
 # include <string.h>
 # include <unistd.h>
@@ -87,7 +88,7 @@ void				ft_lstadd(t_list **alst, t_list *new);
 
 int					ft_numlen(int nb);
 int					ft_charblank(char c);
-void				ft_thuglife(void);
 int					ft_strblank(const char *s);
 int					ft_tablen(int *tab);
+int					get_gext_line(const int fd, char **line);
 #endif

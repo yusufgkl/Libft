@@ -6,7 +6,7 @@
 #    By: ygokol <marvin@42.fr>                      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2016/11/13 19:02:07 by ygokol            #+#    #+#              #
-#    Updated: 2016/11/28 11:43:24 by ygokol           ###   ########.fr        #
+#    Updated: 2017/04/20 19:34:22 by ygokol           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -68,7 +68,6 @@ SRC = ./ft_atoi.c\
 	  ./ft_toupper.c\
 	  ./ft_numlen.c\
 	  ./ft_charblank.c\
-	  ./ft_thuglife.c\
 	  ./ft_strblank.c\
 	  ./ft_tablen.c\
 	  ./ft_lstadd.c\
@@ -77,6 +76,7 @@ SRC = ./ft_atoi.c\
 	  ./ft_lstiter.c\
 	  ./ft_lstmap.c\
 	  ./ft_lstnew.c\
+	  ./get_next_line.c\
 
 OBJ = ./ft_atoi.o\
 	  ./ft_bzero.o\
@@ -134,7 +134,6 @@ OBJ = ./ft_atoi.o\
 	  ./ft_toupper.o\
 	  ./ft_numlen.o\
 	  ./ft_charblank.o\
-	  ./ft_thuglife.o\
 	  ./ft_strblank.o\
 	  ./ft_tablen.o\
 	  ./ft_lstadd.o\
@@ -143,6 +142,7 @@ OBJ = ./ft_atoi.o\
 	  ./ft_lstiter.o\
 	  ./ft_lstmap.o\
 	  ./ft_lstnew.o\
+	  ./get_next_line.o\
 
 
 INC = ./libft.h
@@ -151,7 +151,7 @@ FLAGS = -Wall -Wextra -Werror
 
 all: $(NAME)
 
-$(NAME):
+$(NAME): $(OBJ)
 	@gcc $(FLAGS) -c $(SRC) -I $(INC)
 	@ar rc $(NAME) $(OBJ)
 	@ranlib $(NAME)
@@ -165,3 +165,7 @@ fclean:
 
 re:
 	@make fclean all
+
+fuck:
+	@make re
+	@make clean
